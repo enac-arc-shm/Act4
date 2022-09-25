@@ -25,12 +25,21 @@ if __name__ == "__main__":
 
         if opcion == 3:
             solicitar_datos.clearConsole()
-            imprimir.imprimir_dispositivos(dispositivos_red.get_dispositivos_de_red())
+            imprimir.imprimir_dispositivos_de_red(dispositivos_red.get_dispositivos_de_red())
             dipositivo_eliminar = solicitar_datos.solicitar_dispositivo_eliminar()
+            dispositivos_red.eliminar_dispositivo(dipositivo_eliminar)
+            pausa = input("Presione una tecla para continuar...")
 
         if opcion == 4:
-            imprimir.imprimir_dispositivos(dispositivos_finales.get_dispositivos_finales())
+            solicitar_datos.clearConsole()
+            imprimir.imprimir_dispositivos_finales(dispositivos_finales.get_dispositivos_finales())
+            dipositivo_eliminar = solicitar_datos.solicitar_dispositivo_eliminar()
+            dispositivos_finales.eliminar_dispositivo(dipositivo_eliminar)
+            pausa = input("Presione una tecla para continuar...")
 
+        if opcion == 5:
+            pausa = input("Presione una tecla para continuar...")
+        
         if opcion == 8:
             solicitar_datos.clearConsole()
             print(dispositivos_red.get_dispositivos_de_red())

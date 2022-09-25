@@ -1,6 +1,6 @@
 #Importar clases 
 import solicitar_datos
-import interfaces
+import imprimir
 
 dispositivos_finales = {}
 
@@ -15,3 +15,10 @@ def get_dispositivos_finales():
 def crear_dispositivo_final(nombre, puertos):
     dispositivos_finales(nombre, puertos)
 
+def eliminar_dispositivo(key):
+    dispositivos_finales = get_dispositivos_finales()
+    if key in dispositivos_finales:
+        dispositivos_finales.pop(key)
+        imprimir.imprimir_mensaje_eliminar()
+    else:
+        imprimir.imprimir_mensaje_eliminar_error()
