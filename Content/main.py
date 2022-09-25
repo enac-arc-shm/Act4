@@ -18,6 +18,7 @@ if __name__ == "__main__":
             if dispositivo_red == 3:
                 datos = interfaces.generar_interfaces_ISP(solicitar_datos.solicitar_puertosSerial(), solicitar_datos.solicitar_puertosLoop())
                 dispositivos_red.crear_dispositivo(solicitar_datos.solicitar_nombre_dispositivo_red("ISP"), datos)
+        
         if opcion == 2:
             datos = interfaces.generar_interfaces_DispositivoFinal(solicitar_datos.solicitar_puertosFa())
             dispositivos_finales.crear_dispositivo_final(solicitar_datos.solicitar_nombre_dispositivo_final())
