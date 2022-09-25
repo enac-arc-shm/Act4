@@ -21,7 +21,17 @@ def imprimir_menu_dispositivosRed():
     print("-----------------------------------------------------------------------")
 
 def imprimir_dispositivos(diccionario_dispositivos):
+    print("---------------------------------------------")
+    print("         Lista de dispositivos de red        ")
+    print("                                             ")
     for dispositivo, datos in diccionario_dispositivos.items():
-        print(f"Nombre del dispositivo{dispositivo}")
-        print("------------------------------------")
-        print(datos)
+        print(f" [+] Nombre del dispositivo: {dispositivo}")
+        print("---------------------------------------------")
+
+def imprimir_dispositivos_info(diccionario_dispositivos):
+    for dispositivo, datos in diccionario_dispositivos.items():
+        print(f"Nombre del dispositivo: {dispositivo}")
+        print("-------------------------------------------_")
+        print("        Puerto     | Información del puerto ")
+        for puerto, info in datos.items():
+            print(f"{puerto}................{info}")

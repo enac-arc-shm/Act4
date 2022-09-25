@@ -3,6 +3,11 @@ from pickle import TRUE
 import imprimir as imprimir
 import os
 
+
+def solicitar_dispositivo_eliminar():
+    nombre = input("Ingrese el nombre del dispositivo que desea eliminar: ")
+    return nombre
+
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls

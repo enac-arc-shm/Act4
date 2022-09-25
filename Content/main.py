@@ -24,10 +24,12 @@ if __name__ == "__main__":
             dispositivos_finales.crear_dispositivo_final(solicitar_datos.solicitar_nombre_dispositivo_final())
 
         if opcion == 3:
-            imprimir.imprimir_dispositivos(dispositivos_red.get_dispositivos_de_red)
+            solicitar_datos.clearConsole()
+            imprimir.imprimir_dispositivos(dispositivos_red.get_dispositivos_de_red())
+            dipositivo_eliminar = solicitar_datos.solicitar_dispositivo_eliminar()
 
         if opcion == 4:
-            imprimir.imprimir_dispositivos(dispositivos_finales.get_dispositivos_finales)
+            imprimir.imprimir_dispositivos(dispositivos_finales.get_dispositivos_finales())
 
         if opcion == 8:
             solicitar_datos.clearConsole()
