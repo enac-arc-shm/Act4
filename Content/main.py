@@ -1,8 +1,8 @@
-import dispositivos_red
-import dispositivos_finales
-import interfaces
-import solicitar_datos
-import imprimir
+import dispositivos_red as dispositivos_red
+import dispositivos_finales as dispositivos_finales
+import interfaces as interfaces
+import solicitar_datos as solicitar_datos
+import imprimir as imprimir
 
 if __name__ == "__main__":
     while True:

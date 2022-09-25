@@ -1,6 +1,6 @@
 #Clase para solicitar datos:
 from pickle import TRUE
-import Content.imprimir as imprimir
+import imprimir as imprimir
 import os
 
 def clearConsole():
