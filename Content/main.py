@@ -5,9 +5,9 @@ import solicitar_datos
 
 if __name__ == "__main__":
     while True:
-        opcion = solicitar_datos.imprimir_menu_inicio()
+        opcion = solicitar_datos.menu_inicio()
         if opcion == 1:
-            dispositivo_red = solicitar_datos.imprimir_menu_dispositivosRed()
+            dispositivo_red = solicitar_datos.menu_dispositivosRed()
             if dispositivo_red == 1:
                 datos = interfaces.generar_interfaces_RT(solicitar_datos.solicitar_puertosGig(), solicitar_datos.solicitar_puertosSerial(), solicitar_datos.solicitar_puertosLoop())
                 dispositivos_red.crear_dispositivo(solicitar_datos.solicitar_nombre_dispositivo_red("Router"), datos)
@@ -21,6 +21,11 @@ if __name__ == "__main__":
             datos = interfaces.generar_interfaces_DispositivoFinal(solicitar_datos.solicitar_puertosFa())
             dispositivos_finales.crear_dispositivo_final(solicitar_datos.solicitar_nombre_dispositivo_final())
 
+        if opcion == 3:
+            
+
+
         if opcion == 8:
+            solicitar_datos.clearConsole()
             print(dispositivos_red.get_dispositivos_de_red())
             pausa = input("Presione una tecla para continuar...")

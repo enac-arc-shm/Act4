@@ -2,5 +2,5 @@
 Autores: 
 -Sergio Hernandez Martinez
 -Ana Mariel San Nicolas Hernandez
--Gemma Veronica Salinas 
+-Gemma Veronica Salinas Rosas
 -Emilio Lopez
