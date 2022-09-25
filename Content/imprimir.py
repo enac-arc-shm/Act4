@@ -22,4 +22,7 @@ def imprimir_menu_dispositivosRed():
     print("-----------------------------------------------------------------------")
 
 def imprimir_dispositivos(diccionario_dispositivos):
-    for 
+    for dispositivo, datos in diccionario_dispositivos.items():
+        print(f"Nombre del dispositivo{dispositivo}")
+        print("------------------------------------")
+        print(datos)
