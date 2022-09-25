@@ -1,6 +1,6 @@
 #Clase para solicitar datos:
 from pickle import TRUE
-import imprimir_mensajes
+import Content.imprimir as imprimir
 import os
 
 def clearConsole():
@@ -9,46 +9,32 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
-
-def imprimir_menu_inicio():
+def menu_inicio():
     clearConsole()
-    print("------------------Seleccione la acción a realizar----------------")
-    print("[1] Crear dispositivo de red")
-    print("[2] Crear dispositivo final")
-    print("[3] eliminar dispositivo de red")
-    print("[4] eliminar dispositivo final")
-    print("[5] Crear conexión")
-    print("[6] Crear VLANS en switch")
-    print("[7] Agregar parametros de red")
-    print("[8] Imprimir dispositivos de red")
-    print("-----------------------------------------------------------------")
+    imprimir.imprimir_menu_inicio()
     while True:
         try:
             opcion = int(input("[?] Teclee una opción: "))
             if opcion > 0 and opcion < 9:
                 break
             else: 
-                imprimir_mensajes.imprimir_error()
+                imprimir.imprimir_error()
         except ValueError:
-            imprimir_mensajes.imprimir_error()
+            imprimir.imprimir_error()
     return opcion
 
-def imprimir_menu_dispositivosRed():
+def menu_dispositivosRed():
     clearConsole()
-    print("------------------Seleccione un dispositivo  a realizar----------------")
-    print("[1] Crear un Router")
-    print("[2] Crear un Switch")
-    print("[3] Crear un ISP")
-    print("-----------------------------------------------------------------------")
+    imprimir.imprimir_menu_dispositivosRed()
     while True:
         try:
             opcion = int(input("[?] Teclee una opción: "))
             if opcion > 0 and opcion < 4:
                 break
             else: 
-                imprimir_mensajes.imprimir_error()
+                imprimir.imprimir_error()
         except ValueError:
-            imprimir_mensajes.imprimir_error()
+            imprimir.imprimir_error()
     return opcion
 
 
@@ -71,7 +57,7 @@ def solicitar_puertosFa():
             puertos = int(input("Ingrese el numero de puertos FastEthernet: "))
             break
         except ValueError:
-            imprimir_mensajes.imprimir_error()
+            imprimir.imprimir_error()
     return puertos
 
 def solicitar_puertosGig():
@@ -80,7 +66,7 @@ def solicitar_puertosGig():
             puertos = int(input("Ingrese el numero de puertos GIgabiteEthernet: "))
             break
         except ValueError:
-            imprimir_mensajes.imprimir_error()
+            imprimir.imprimir_error()
     return puertos
 
 def solicitar_puertosLoop():
@@ -89,7 +75,7 @@ def solicitar_puertosLoop():
             puertos = int(input("Ingrese el numero de puertos Loopback: "))
             break
         except ValueError:
-            imprimir_mensajes.imprimir_error()
+            imprimir.imprimir_error()
     return puertos
 
 def solicitar_puertosSerial():
@@ -99,7 +85,7 @@ def solicitar_puertosSerial():
             puertos = int(input("Ingrese el numero de puertos Seriales: "))
             break
         except ValueError:
-            imprimir_mensajes.imprimir_error()
+            imprimir.imprimir_error()
     for puerto in range(1,puertos + 1):
         PuertosSeriales.append(input(f"Ingrese el nombre del puerto Serial {puerto}: "))
     return PuertosSeriales
