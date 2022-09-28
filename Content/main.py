@@ -21,7 +21,7 @@ if __name__ == "__main__":
         
         if opcion == 2:
             datos = interfaces.generar_interfaces_DispositivoFinal(solicitar_datos.solicitar_puertosFa())
-            dispositivos_finales.crear_dispositivo_final(solicitar_datos.solicitar_nombre_dispositivo_final())
+            dispositivos_finales.crear_dispositivo_final(solicitar_datos.solicitar_nombre_dispositivo_final(), datos)
 
         if opcion == 3:
             solicitar_datos.clearConsole()
@@ -44,8 +44,9 @@ if __name__ == "__main__":
         if opcion == 7:
             imprimir.imprimir_dispositivos_info(dispositivos_red.get_dispositivos_de_red())
             dispositivo = solicitar_datos.solicitar_dispositivos_parametros()
-            while dispositivos_red.verificar_informacion(dispositivo, solicitar_datos.solicitar_dispositivos_interfaz()):
-                print ("[-] Dispositivo no encontrado")
+            interfaz = solicitar_datos.solicitar_dispositivos_interfaz()
+            while dispositivos_red.verificar_informacion(dispositivo, interfaz):
+                print ("[-] Dispositivo e interfaz encontrada ")
             
             pausa = input("Presione una tecla para continuar...")
 

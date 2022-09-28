@@ -33,3 +33,6 @@ def verificar_informacion(_dispositivo_, _interfaz_):
                 return False
         else:
             return True
+
+def agregar_parametros_red(_dispositivo_, _interfaz_):
+    print("joa")

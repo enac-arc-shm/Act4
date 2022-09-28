@@ -55,8 +55,8 @@ def solicitar_nombre_dispositivo_red(_tipo_):
     nombre = input(f"Ingrese el nombre del dispositivo de red({_tipo_}): ")
     return nombre
 
-def solicitar_nombre_dispositivo_final(_tipo_):
-    nombre = input("Ingrese el nombre del dispositivo de red(): ")
+def solicitar_nombre_dispositivo_final():
+    nombre = input("Ingrese el nombre del dispositivo de red: ")
     return nombre
 
 def solicitar_tipo_dispositivo():
