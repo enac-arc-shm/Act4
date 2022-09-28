@@ -8,6 +8,14 @@ def solicitar_dispositivo_eliminar():
     nombre = input("Ingrese el nombre del dispositivo que desea eliminar: ")
     return nombre
 
+def solicitar_dispositivos_parametros():
+    dispositivo = input("Ingrese el nombre del dispositivo a modificar: ")
+    return dispositivo
+
+def solicitar_dispositivos_interfaz():
+    interfaz = input("Ingrese la interfaz: ")
+    return interfaz
+
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
@@ -68,7 +76,7 @@ def solicitar_puertosFa():
 def solicitar_puertosGig():
     while True:
         try:
-            puertos = int(input("Ingrese el numero de puertos GIgabiteEthernet: "))
+            puertos = int(input("Ingrese el numero de puertos GigabiteEthernet: "))
             break
         except ValueError:
             imprimir.imprimir_error()

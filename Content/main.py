@@ -39,7 +39,16 @@ if __name__ == "__main__":
 
         if opcion == 5:
             pausa = input("Presione una tecla para continuar...")
-        
+            #emilio 
+
+        if opcion == 7:
+            imprimir.imprimir_dispositivos_info(dispositivos_red.get_dispositivos_de_red())
+            dispositivo = solicitar_datos.solicitar_dispositivos_parametros()
+            while dispositivos_red.verificar_informacion(dispositivo, solicitar_datos.solicitar_dispositivos_interfaz()):
+                print ("[-] Dispositivo no encontrado")
+            
+            pausa = input("Presione una tecla para continuar...")
+
         if opcion == 8:
             solicitar_datos.clearConsole()
             print(dispositivos_red.get_dispositivos_de_red())

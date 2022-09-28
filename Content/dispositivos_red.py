@@ -22,3 +22,14 @@ def eliminar_dispositivo(key):
         imprimir.imprimir_mensaje_eliminar()
     else:
         imprimir.imprimir_mensaje_eliminar_error()
+
+def verificar_informacion(_dispositivo_, _interfaz_):
+    dispositivos_de_red = get_dispositivos_de_red()
+    for dispositivo, datos in dispositivos_de_red.items():
+        if _dispositivo_ == dispositivo:
+            if _interfaz_ in datos:
+                return False
+            else:
+                return False
+        else:
+            return True

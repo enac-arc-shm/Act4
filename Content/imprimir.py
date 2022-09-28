@@ -38,12 +38,15 @@ def imprimir_dispositivos_finales(diccionario_dispositivos_finales):
 
 def imprimir_dispositivos_info(diccionario_dispositivos):
     for dispositivo, datos in diccionario_dispositivos.items():
+        print("____________________________________________")
         print(f"Nombre del dispositivo: {dispositivo}")
-        print("-------------------------------------------_")
+        print("--------------------------------------------")
         print("        Puerto     | Información del puerto ")
         for puerto, info in datos.items():
             print(f"{puerto}................{info}")
-
+        print("                                            ")
+        print("                                            ")
+        
 def imprimir_mensaje_eliminar():
     print(" [-] Elemento eliminado correctamente")
 
