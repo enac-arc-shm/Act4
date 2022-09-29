@@ -61,6 +61,6 @@ def imprimir_todo(diccionario_dispositivos):
         print("        Puerto     | Información del puerto ")
         for puerto, info in datos.items():
             if info != "Disponible":
-                print(f"{puerto}................{info}")
+                print(f"{puerto}.........................{info}")
         print("                                            ")
         print("                                            ")
