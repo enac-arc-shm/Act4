@@ -10,7 +10,7 @@ def imprimir_menu_inicio():
     print("[5] Crear conexión")
     print("[6] Crear VLANS en switch")
     print("[7] Agregar parametros de red")
-    print("[8] Imprimir dispositivos de red")
+    print("[8] Imprimir informacion")
     print("-----------------------------------------------------------------")
 
 def imprimir_menu_dispositivosRed():
@@ -52,3 +52,15 @@ def imprimir_mensaje_eliminar():
 
 def imprimir_mensaje_eliminar_error():
     print(" [!] Elemento no encontrado")
+
+def imprimir_todo(diccionario_dispositivos):
+    for dispositivo, datos in diccionario_dispositivos.items():
+        print("____________________________________________")
+        print(f"Nombre del dispositivo: {dispositivo}")
+        print("--------------------------------------------")
+        print("        Puerto     | Información del puerto ")
+        for puerto, info in datos.items():
+            if info != "Disponible":
+                print(f"{puerto}................{info}")
+        print("                                            ")
+        print("                                            ")

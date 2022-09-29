@@ -3,6 +3,8 @@ import dispositivos_finales as dispositivos_finales
 import interfaces as interfaces
 import solicitar_datos as solicitar_datos
 import imprimir as imprimir
+import vlans as vlans
+import conexiones_red as conexiones_red
 
 if __name__ == "__main__":
     while True:
@@ -38,19 +40,28 @@ if __name__ == "__main__":
             pausa = input("Presione una tecla para continuar...")
 
         if opcion == 5:
+            solicitar_datos.clearConsole()
+            conexiones_red.conexiones()
             pausa = input("Presione una tecla para continuar...")
             #emilio 
+
+        if opcion == 6:
+            solicitar_datos.clearConsole()
+            vlans.solicitar()
+            pausa = input("Presione una tecla para continuar...")
 
         if opcion == 7:
             imprimir.imprimir_dispositivos_info(dispositivos_red.get_dispositivos_de_red())
             dispositivo = solicitar_datos.solicitar_dispositivos_parametros()
             interfaz = solicitar_datos.solicitar_dispositivos_interfaz()
-            while dispositivos_red.verificar_informacion(dispositivo, interfaz):
-                print ("[-] Dispositivo e interfaz encontrada ")
-            
+            if dispositivos_red.verificar_informacion(dispositivo, interfaz):
+                print ("[-] Dispositivo e interfaz no encontrado ")
+            else: 
+                dispositivos_red.agregar_parametros_red(dispositivo, interfaz)
             pausa = input("Presione una tecla para continuar...")
 
         if opcion == 8:
             solicitar_datos.clearConsole()
-            print(dispositivos_red.get_dispositivos_de_red())
+            imprimir.imprimir_todo(dispositivos_red.get_dispositivos_de_red())
+            imprimir.imprimir_todo(dispositivos_finales.get_dispositivos_finales())
             pausa = input("Presione una tecla para continuar...")

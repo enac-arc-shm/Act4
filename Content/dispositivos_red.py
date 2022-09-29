@@ -35,4 +35,8 @@ def verificar_informacion(_dispositivo_, _interfaz_):
             return True
 
 def agregar_parametros_red(_dispositivo_, _interfaz_):
-    print("joa")
+    dispositivos_de_red = get_dispositivos_de_red()
+    diccionario_interfaces = dispositivos_de_red[_dispositivo_]
+    direccion_ip = input("Ingrese la direccion ip con su prefijo de red: ")
+    diccionario_interfaces[_interfaz_] = direccion_ip
+            
